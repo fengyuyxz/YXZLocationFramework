@@ -43,14 +43,6 @@ Pod::Spec.new do |s|
 
 
 
-s.dependency 'Masonry'
-s.dependency 'WHCommonViewComponents'
-s.dependency 'WHCommonUtilsComponents'
-s.dependency 'WHNetworkComponent'
-s.dependency 'WHComponentCenter'
-s.dependency 'CardTypeActionSheetView'
-s.dependency 'WHNationalCode'
-
 
 
 end
