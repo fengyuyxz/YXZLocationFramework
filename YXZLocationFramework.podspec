@@ -7,39 +7,37 @@
 #
 
 Pod::Spec.new do |s|
-  s.name         = "WHMemberLogin"
-  s.version      = "1.0.6"
-  s.summary      = "WHMemberLogin for user login."
+  s.name         = "YXZLocationFramework"
+  s.version      = "0.0.1"
+  s.summary      = "YXZLocationFramework for user login."
   s.license          = {:type => "MIT", :file => "LICENSE"}
   s.author           = { "benpu.fu" => "benpu.fu@bestwehotel.com" }
    s.module_name = 'WHMemberLogin'
-  s.homepage     = "http://git.ejinjiang.com:10080/Mobile/WHMemberLogin"
-  s.source       = { :git => "http://git.ejinjiang.com:10080/Mobile/WHMemberLogin.git", :tag => s.version.to_s}
+  s.homepage     = "https://github.com/xuezhouyan"
+  s.source       = { :git => "https://github.com/xuezhouyan/YXZLocationFramework.git", :tag => s.version.to_s}
 
-  s.platform     = :ios, '8.0'
-  s.ios.deployment_target = '8.0'
+  s.platform     = :ios, '9.0'
+  s.ios.deployment_target = '9.0'
   s.requires_arc = true
   s.frameworks = 'UIKit', 'Foundation'
-  s.public_header_files = 'WHMemberLoginSDK/Core/WHLoginStateManager.h'
+  # s.public_header_files = 'WHMemberLoginSDK/Core/WHLoginStateManager.h'
 
 
   s.subspec 'Core' do |core|
-    core.source_files = "WHMemberLoginSDK/Core/**/*.{h,m}"
-    core.vendored_libraries = 'WHMemberLoginSDK/Core/Manager/FMDeviceManager/*.a'
-    core.ios.libraries =  'resolv.9'
-
+    core.source_files = "YXZLocationFramework/core/manager/*.{h,m}"
+    
   end
 
-  s.subspec 'Botao' do |botao|
-    botao.dependency 'WHMemberLogin/Core'
-    botao.source_files = "WHMemberLoginSDK/BTJJLogin/**/*.{h,m}"
-    botao.resource = "WHMemberLoginSDK/Bundle/WHMemberLoginBotao.bundle"
+  s.subspec 'BaiDuLocation' do |baiDuLocation|
+    baiDuLocation.dependency 'YXZLocationFramework/Core'
+    baiDuLocation.source_files = "YXZLocationFramework/core/BMExample/*.{h,m}"
+    baiDuLocation.dependency 'BMKLocationKit'
   end
 
-  s.subspec 'WeTrip' do |wetrip|
-    wetrip.dependency 'WHMemberLogin/Core'
-    wetrip.source_files = "WHMemberLoginSDK/WeTripLogin/**/*.{h,m}"
-    wetrip.resource = "WHMemberLoginSDK/Bundle/WeTripLogin.bundle"
+  s.subspec 'GaoDeLocation' do |gaodeLocation|
+    gaodeLocation.dependency 'YXZLocationFramework/Core'
+    gaodeLocation.source_files = "YXZLocationFramework/core/AMExample/*.{h,m}"
+    gaodeLocation.dependency 'AMapLocation'
   end
 
 
